@@ -171,7 +171,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb \
     ro.adb.secure=0 \
     ro.sf.lcd_density=320 \
-    ro.opengles.version=196609 \
+    ro.opengles.version=196610 \
     ro.du.updater=dragon
 
 # for audio
@@ -189,13 +189,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # DRM Mappings
 PRODUCT_PROPERTY_OVERRIDES += \
-camera.flash_off=0 \
-drm.service.enabled=true \
-ro.com.widevine.cachesize=16777216
+    camera.flash_off=0 \
+    drm.service.enabled=true \
+    ro.com.widevine.cachesize=16777216
 
 # Face Unlock
 PRODUCT_PACKAGES += \
-libprotobuf-cpp-full
+    libprotobuf-cpp-full
 
 # for keyboard key mappings
 PRODUCT_PACKAGES += \
