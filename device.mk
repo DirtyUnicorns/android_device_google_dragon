@@ -197,6 +197,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
+# Grid Recents
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.recents.grid=true
+
 # for keyboard key mappings
 PRODUCT_PACKAGES += \
     DragonKeyboard
