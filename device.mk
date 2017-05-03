@@ -201,6 +201,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.recents.grid=true
 
+# Google Assistant
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opa.eligible_device=true
+
 # for keyboard key mappings
 PRODUCT_PACKAGES += \
     DragonKeyboard
