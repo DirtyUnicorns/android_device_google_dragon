@@ -58,12 +58,16 @@ PRODUCT_PACKAGES += \
     CrashReportProvider \
     fwtool
 
-ifeq ($(TARGET_BUILD_VARIANT),user)
+ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 PRODUCT_PACKAGES += \
     tinyplay \
     tinycap \
     tinymix
 endif
+
+PRODUCT_COPY_FILES += \
+    device/google/dragon/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    device/google/dragon/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
@@ -196,10 +200,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Face Unlock
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
-
-# Grid Recents
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.recents.grid=true
 
 # Google Assistant
 PRODUCT_PROPERTY_OVERRIDES += \
