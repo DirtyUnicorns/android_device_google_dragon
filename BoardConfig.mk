@@ -56,7 +56,6 @@ BOARD_USES_DRM_HWCOMPOSER := true
 BOARD_DRM_HWCOMPOSER_BUFFER_IMPORTER := nvidia-gralloc
 BOARD_USES_LIBDRM := true
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
-#TARGET_USES_HWC2 := true
 TARGET_FORCES_DRM_HWC1 := true
 
 PRESENT_TIME_OFFSET_FROM_VSYNC_NS := 0
@@ -126,14 +125,11 @@ BOARD_SEPOLICY_DIRS += device/google/dragon/sepolicy
 # add firmware update to the updater binary
 TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_dragon
 TARGET_RECOVERY_UPDATER_EXTRA_LIBS +=
-#TARGET_RECOVERY_UI_LIB := librecovery_ui_dragon
 PRODUCT_BUILD_RECOVERY_IMAGE := true
 
 ifeq ($(SECURE_OS_BUILD),tlk)
   BOARD_SUPPORT_ROLLBACK_PROTECTION := true
 endif
-
-#BOARD_HAL_STATIC_LIBRARIES := libhealthd.dragon
 
 # Shims
 TARGET_LD_SHIM_LIBS := \

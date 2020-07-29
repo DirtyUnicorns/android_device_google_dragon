@@ -238,8 +238,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.lmk.use_minfree_levels=true
 
 $(call inherit-product-if-exists, hardware/nvidia/tegra132/tegra132.mk)
-$(call inherit-product-if-exists, vendor/nvidia/dragon/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/nvidia/dragon-common/device-vendor.mk)
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 
 ENABLE_LIBDRM := true
@@ -257,5 +255,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/google/dragon/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     device/google/dragon/seccomp_policy/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
-
-$(call inherit-product-if-exists, vendor/nvidia/dragon/dragon-vendor.mk)

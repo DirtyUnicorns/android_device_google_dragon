@@ -1,4 +1,4 @@
-# Copyright (C) 2013-2019 The Dirty Unicorns Project
+# Copyright (C) 2013-2020 The Dirty Unicorns Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -32,11 +32,9 @@ PRODUCT_NAME := du_dragon
 PRODUCT_DEVICE := dragon
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel C
-PRODUCT_MANUFACTURER := Google
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="dragon" \
-    TARGET_DEVICE="dragon" \
     PRIVATE_BUILD_DESC="ryu-user 8.1.0 OPM1.171019.016 4503492 release-keys"
 
 BUILD_FINGERPRINT := "google/ryu/dragon:8.1.0/OPM1.171019.016/4503492:user/release-keys"
@@ -44,4 +42,6 @@ BUILD_FINGERPRINT := "google/ryu/dragon:8.1.0/OPM1.171019.016/4503492:user/relea
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=google/ryu/dragon:8.1.0/OPM1.171019.016/4503492:user/release-keys
 
+$(call inherit-product-if-exists, vendor/nvidia/dragon/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/nvidia/dragon-common/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
