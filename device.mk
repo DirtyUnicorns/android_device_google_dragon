@@ -36,15 +36,15 @@ LOCAL_FSTAB := $(LOCAL_PATH)/fstab.dragon
 TARGET_RECOVERY_FSTAB = $(LOCAL_FSTAB)
 
 PRODUCT_COPY_FILES := \
-    $(LOCAL_PATH)/dump_bq25892.sh:system/bin/dump_bq25892.sh \
-    $(LOCAL_PATH)/touchfwup.sh:system/bin/touchfwup.sh \
+    $(LOCAL_PATH)/dump_bq25892.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/dump_bq25892.sh \
+    $(LOCAL_PATH)/touchfwup.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/touchfwup.sh \
     $(LOCAL_PATH)/init.dragon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.dragon.rc \
     $(LOCAL_PATH)/init.dragon.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.dragon.usb.rc \
     $(LOCAL_PATH)/init.recovery.dragon.rc:recovery/root/init.recovery.dragon.rc \
-    $(LOCAL_PATH)/init_regions.sh:system/bin/init_regions.sh \
-    $(LOCAL_PATH)/tune-thermal-gov.sh:system/bin/tune-thermal-gov.sh \
+    $(LOCAL_PATH)/init_regions.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/init_regions.sh \
+    $(LOCAL_PATH)/tune-thermal-gov.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/tune-thermal-gov.sh \
     $(LOCAL_PATH)/ueventd.dragon.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
-    $(LOCAL_PATH)/speakerdsp.ini:system/etc/cras/speakerdsp.ini \
+    $(LOCAL_PATH)/speakerdsp.ini:$(TARGET_COPY_OUT_SYSTEM)/etc/cras/speakerdsp.ini \
     $(LOCAL_PATH)/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal \
     $(LOCAL_FSTAB):$(TARGET_COPY_OUT_RAMDISK)/fstab.dragon \
     $(LOCAL_FSTAB):$(TARGET_COPY_OUT_VENDOR)/etc/fstab.dragon
@@ -100,10 +100,10 @@ PRODUCT_PACKAGES += \
 # Copy dsp firmware to the vendor parition so it is available when hotwording
 # starts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rt5677_elf_vad:vendor/firmware/rt5677_elf_vad
+    $(LOCAL_PATH)/rt5677_elf_vad:$(TARGET_COPY_OUT_VENDOR)/firmware/rt5677_elf_vad
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/enctune.conf:system/etc/enctune.conf
+    $(LOCAL_PATH)/enctune.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/enctune.conf
 
 PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -188,10 +188,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Face Unlock
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
-
-# Google Assistant
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opa.eligible_device=true
 
 # Allows healthd to boot directly from charger mode rather than initiating a reboot.
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
