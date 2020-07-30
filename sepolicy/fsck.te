@@ -1,0 +1,2 @@
+allow fsck cache_file:dir getattr;
+allow fsck tmpfs:blk_file getattr;

@@ -11,8 +11,16 @@ allow init { cache_file storage_file }:dir mounton;
 # /config
 allow init configfs:{ file lnk_file } create_file_perms;
 
+allow init camera_device:chr_file { ioctl open read write };
+allow init cameraserver:binder transfer;
+allow init gpu_device:chr_file { getattr ioctl open read write };
+allow init hal_configstore_default:binder call;
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init host1x_device:chr_file { ioctl open read write };
+allow init hwservicemanager:binder { call transfer };
+allow init ion_device:chr_file { ioctl open read };
 allow init proc:file { read setattr };
 allow init sysfs_bluetooth:file { read write open };
 allow init sysfs_devices_system_cpu:file { read write };
 allow init sysfs_wlan_fwpath:file setattr;
-allow init sysfs:file { setattr };
+allow init sysfs:file setattr;
